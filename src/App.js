@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import Login from './pages/Login'
+import Home from './pages/Home'
+import UploadVideo from './pages/UploadVideo'
+import Video from './pages/Video'
+import Edit from './pages/Edit'
+import Header from './components/Header'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const userId = sessionStorage.getItem('user_id')
+	return (
+		<Router>
+			<div className="App">
+				<Routes>
+					<Route exact path="/" element={<Login />} />
+					<Route exact path="/login" element={<Login />} />
+					<Route exact path="/home" element={
+						<>
+							<Header userId={userId} /> 
+							<Home />
+						</>
+					} />
+					<Route path="/upload-video" element={
+						<>
+							<Header userId={userId} /> 
+							<UploadVideo />
+						</>
+					} />
+					<Route path="/video/:id" element={
+						<>
+							<Header userId={userId} /> 
+							<Video />
+						</>
+					} />
+					<Route path="/edit-video/:id" element={
+						<>
+							<Header userId={userId} /> 
+							<Edit />
+						</>
+					} />
+				</Routes>
+			</div>
+		</Router>
+	)
 }
 
-export default App;
+export default App
