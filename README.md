@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# Getting Started with Educational Video Player
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Overview
+
+This application allows users to view, upload, and edit their videos in a simple UI. Users will be required to login with a username (firstname_lastname) regardless of if they have or have not uploaded videos with the provided username before, the actions to upload videos will remain available for new users, while existing users will see their old videos.
+
+Users can watch their videos by clicking on the 'Watch Video' button on any of the Home page video cards, as well as the ability to edit the video title and description in a separate page using the 'Edit Video' button.
+
+After clicking 'Watch Video', the user can watch the video in a new page while being able to customize their viewing preferences with full playback functionality, pausing, adjusting playback speed, and viewing in fullscreen.
+
+Users can comment on their videos while being able to see their past comments ordered by latest comments with scrolling functionality. 
+
+New and existing logged-in users can also upload videos by clicking on the 'Create Video' button on the top right of the header which navigates them to a page where they can provide a title, description, and link to a video. The 'Upload Video' button on this page will successfully upload the video which will then be available to view and edit back on the home page.
+
+The 'Educational Video Player' header and icon at the top left of the header will navigate users back to the home page as an alternative to the 'Back to Home' button available on the Create Video, Edit Video, and Watch Video pages. 
+
+# Platform View
+
+Login Page
+![Login](login.png) 
+
+Home Page
+![Home](home.png) 
+
+Video Player Page
+![VideoPlayer](videoplayer.png) 
+
+Video Comments Page
+![VideoComments](videocomments.png) 
+
+Create Video Page
+![Create](create.png) 
+
+Edit Video Page
+![Edit](edit.png) 
+
+## Test Users
+
+Log in with a username with the format `firstname_lastname` to view a blank platform with no videos, and start by uploading videos using the 'Create Video' button
+
+Otherwise, here are several usernames I've created and used with uploaded videos and comments
+
+`john_smith`
+`test_user`
+`abijith_mani`
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+
+Install necessary dependencies
 
 ### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technical Specifications
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Leveraged lazy loading for video cards
+- Created components for improved readability, debugging, and testing
+- Added UI features such as Fade to load video cards fading in on page load
+- Leveraged MaterialUI for all styling
+- Used local sessionStorage to store logged-in user_id for current platform session
+- Used navigate from react-router to handle page routing

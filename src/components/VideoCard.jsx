@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Card, CardContent, CardMedia, Typography, Box } from '@mui/material'
+import { Button, Card, CardContent, Typography, Box } from '@mui/material'
 import OndemandVideoIcon from '@mui/icons-material/OndemandVideo'
 
 const VideoCard = ({ video, onWatch, onEdit }) => {

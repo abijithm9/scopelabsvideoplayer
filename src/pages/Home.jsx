@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { Box, Typography, Grid, CircularProgress } from '@mui/material'
 import Fade from '@mui/material/Fade'
 
-const VideoCard = lazy(() => import('../components/VideoCard')) // Lazy load the VideoCard component
+const VideoCard = lazy(() => import('../components/VideoCard'))
 
 const Home = () => {
     const [videos, setVideos] = useState([])
